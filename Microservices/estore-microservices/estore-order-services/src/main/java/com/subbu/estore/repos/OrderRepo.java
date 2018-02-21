@@ -14,5 +14,7 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "orders", path = "orders")
 public interface OrderRepo extends PagingAndSortingRepository<Order, Long> {
 
-    public List<Order> findByUserId(@Param("userId") Long userId);
+    public Order findByGuid(@Param("guid") String guid);
+
+    public List<Order> findByUserId(@Param("userId") String userId);
 }

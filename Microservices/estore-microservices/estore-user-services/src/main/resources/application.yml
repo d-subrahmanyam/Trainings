@@ -1,8 +1,4 @@
 spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
   jpa:
     hibernate:
       ddl-auto: create-drop

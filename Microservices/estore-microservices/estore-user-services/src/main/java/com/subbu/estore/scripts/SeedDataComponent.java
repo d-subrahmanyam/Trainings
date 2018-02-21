@@ -29,7 +29,7 @@ public class SeedDataComponent implements CommandLineRunner {
         List<User> users = new ArrayList<>();
         User subbu = new User("subbu", "test123", "Subrahmanyam", "Devarakonda","Flat-205, Block-A, SHT", "Miyapur", "Hyderbad","TS","500049","India");
         users.add(subbu);
-        User karthik = new User("karthik", "test123", "Karthikeya", "Devarakonda","Flat-205, Block-A, SHT", "Miyapur", "Hyderbad","TS","500049","India");
+        User karthik = new User("subbud", "test123", "Karthikeya", "Devarakonda","Flat-205, Block-A, SHT", "Miyapur", "Hyderbad","TS","500049","India");
         users.add(karthik);
         return users;
     }

@@ -1,6 +1,7 @@
 package com.subbu.estore.scripts;
 
 import com.subbu.estore.clients.UserClient;
+import com.subbu.estore.dtos.User;
 import com.subbu.estore.entities.LineItem;
 import com.subbu.estore.entities.Order;
 import com.subbu.estore.repos.OrderRepo;
@@ -48,7 +49,9 @@ public class SeedDataComponent implements CommandLineRunner {
         lineItem2.setQuantity(20);
         order1.addLineItem(lineItem2);
 
-        order1.setUserId("af5e5f2a-6698-464c-be06-45521c5d0cf1");
+        User subbu = userClient.findByUsername("subbu").getBody();
+
+        order1.setUserId(subbu.getGuid());
 
         orders.add(order1);
 
@@ -66,7 +69,9 @@ public class SeedDataComponent implements CommandLineRunner {
         lineItem4.setQuantity(20);
         order2.addLineItem(lineItem4);
 
-        order2.setUserId("d67d662a-0d9b-4890-b16c-0ed13027d32d");
+        User subbud = userClient.findByUsername("subbud").getBody();
+
+        order2.setUserId(subbud.getGuid());
 
         orders.add(order2);
         return orders;
