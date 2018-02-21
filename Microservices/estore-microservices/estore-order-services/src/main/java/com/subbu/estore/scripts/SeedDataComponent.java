@@ -1,6 +1,8 @@
 package com.subbu.estore.scripts;
 
+import com.subbu.estore.clients.CatalogClient;
 import com.subbu.estore.clients.UserClient;
+import com.subbu.estore.dtos.Item;
 import com.subbu.estore.dtos.User;
 import com.subbu.estore.entities.LineItem;
 import com.subbu.estore.entities.Order;
@@ -25,6 +27,9 @@ public class SeedDataComponent implements CommandLineRunner {
     @Autowired
     private UserClient userClient;
 
+    @Autowired
+    private CatalogClient catalogClient;
+
     @Override
     public void run(String... strings) throws Exception {
         List<Order> orders = order();
@@ -40,12 +45,14 @@ public class SeedDataComponent implements CommandLineRunner {
         order1.setTax(5);
 
         LineItem lineItem1 = new LineItem();
-        lineItem1.setItemId("7e137efd-3465-40a4-aaed-fc9dc6e73285");
+        Item apple = catalogClient.findByName("apple").getBody();
+        lineItem1.setItemId(apple.getGuid());
         lineItem1.setQuantity(20);
         order1.addLineItem(lineItem1);
 
         LineItem lineItem2 = new LineItem();
-        lineItem2.setItemId("277672ac-669a-4d5e-a509-d791d46f2fc9");
+        Item banana = catalogClient.findByName("banana").getBody();
+        lineItem1.setItemId(banana.getGuid());
         lineItem2.setQuantity(20);
         order1.addLineItem(lineItem2);
 
@@ -60,12 +67,14 @@ public class SeedDataComponent implements CommandLineRunner {
         order2.setTax(5);
 
         LineItem lineItem3 = new LineItem();
-        lineItem3.setItemId("30b4f95f-ecc1-4673-a5b5-e3cda8a49f17");
+        Item milk = catalogClient.findByName("milk").getBody();
+        lineItem1.setItemId(milk.getGuid());
         lineItem3.setQuantity(20);
         order2.addLineItem(lineItem3);
 
         LineItem lineItem4= new LineItem();
-        lineItem4.setItemId("b0bb02a9-0b9a-4c6c-b80c-6c4f759d2a1c");
+        Item orange = catalogClient.findByName("orange").getBody();
+        lineItem1.setItemId(orange.getGuid());
         lineItem4.setQuantity(20);
         order2.addLineItem(lineItem4);
 

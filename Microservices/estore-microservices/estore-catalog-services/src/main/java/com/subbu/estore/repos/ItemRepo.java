@@ -13,7 +13,7 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "catalog", path = "catalog")
 public interface ItemRepo extends PagingAndSortingRepository<Item, Long> {
 
-    public Item findByName(@Param("name") String username);
+    public Item findByName(@Param("name") String name);
 
     public List<Item> findByMeasure(@Param("measure") String measure);
 
