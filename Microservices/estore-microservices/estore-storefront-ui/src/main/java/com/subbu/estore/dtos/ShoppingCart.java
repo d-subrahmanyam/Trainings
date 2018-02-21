@@ -1,9 +1,11 @@
 package com.subbu.estore.dtos;
 
+import com.subbu.estore.services.ItemService;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -23,6 +25,9 @@ public class ShoppingCart {
     private List<LineItem> items;
     private double total;
     private boolean previousOrder;
+
+    @Autowired
+    private ItemService itemService;
 
     public ShoppingCart() {
         this.items = new ArrayList<>();
@@ -70,6 +75,8 @@ public class ShoppingCart {
             _lineItem.setQuantity(_quantity);
             items.set(index, _lineItem);
         } else {
+            Item item = itemService.findByGuid(itemId);
+            lineItem.setItem(item);
             items.add(lineItem);
         }
     }

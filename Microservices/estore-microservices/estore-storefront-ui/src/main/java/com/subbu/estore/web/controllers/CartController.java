@@ -71,7 +71,12 @@ public class CartController {
     public String showOrder(ModelMap model, @RequestParam("orderId") String orderId) {
         Order order = orderService.findByGuid(orderId);
         logger.info("Order deails - {}", order);
-        shoppingCart.setItems(order.getLineItems());
+        List<LineItem> lineItems = order.getLineItems();
+        for(LineItem lineItem: lineItems) {
+            Item item = itemService.findByGuid(lineItem.getItemId());
+            lineItem.setItem(item);
+        }
+        shoppingCart.setItems(lineItems);
         shoppingCart.setPreviousOrder(true);
         model.put("shoppingCart", shoppingCart);
         return "cart";

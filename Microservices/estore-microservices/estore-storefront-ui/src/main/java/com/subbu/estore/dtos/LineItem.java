@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class LineItem {
 
+    private Item item;
+
     private String itemId;
 
     private int quantity;
@@ -21,6 +23,20 @@ public class LineItem {
     public LineItem(String itemId, int quantity) {
         this.itemId = itemId;
         this.quantity = quantity;
+    }
+
+    public LineItem(String itemId, int quantity, Item item) {
+        this.itemId = itemId;
+        this.quantity = quantity;
+        this.item = item;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public String getItemId() {
