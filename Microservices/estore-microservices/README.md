@@ -9,4 +9,4 @@ The services need be executed in an order
 3. estore-order-services
 4. estore-storefront-ui
 
-Navigate to each folder and hit **** mvn clean spring-boot:run
+Navigate to each folder and hit **mvn clean spring-boot:run**
