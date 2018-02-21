@@ -54,10 +54,10 @@ local.properties
 .worksheet
 
 ### Eclipse Patch ###
-# Eclipse Core		
+# Eclipse Core
 .project
 
-# JDT-specific (Eclipse Java Development Tools)		
+# JDT-specific (Eclipse Java Development Tools)
 .classpath
 
 ### Git ###
@@ -163,3 +163,6 @@ buildNumber.properties
 
 
 # End of https://www.gitignore.io/api/git,java,maven,eclipse,intellij+all
+
+
+.DS_Store
