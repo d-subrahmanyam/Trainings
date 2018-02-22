@@ -52,7 +52,7 @@ public class SeedDataComponent implements CommandLineRunner {
 
         LineItem lineItem2 = new LineItem();
         Item banana = catalogClient.findByName("banana").getBody();
-        lineItem1.setItemId(banana.getGuid());
+        lineItem2.setItemId(banana.getGuid());
         lineItem2.setQuantity(20);
         order1.addLineItem(lineItem2);
 
@@ -68,13 +68,13 @@ public class SeedDataComponent implements CommandLineRunner {
 
         LineItem lineItem3 = new LineItem();
         Item milk = catalogClient.findByName("milk").getBody();
-        lineItem1.setItemId(milk.getGuid());
+        lineItem3.setItemId(milk.getGuid());
         lineItem3.setQuantity(20);
         order2.addLineItem(lineItem3);
 
         LineItem lineItem4= new LineItem();
         Item orange = catalogClient.findByName("orange").getBody();
-        lineItem1.setItemId(orange.getGuid());
+        lineItem4.setItemId(orange.getGuid());
         lineItem4.setQuantity(20);
         order2.addLineItem(lineItem4);
 

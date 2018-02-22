@@ -60,8 +60,7 @@ public class ShoppingCart {
 
     public double getTotal() {
         total = 0;
-        //items.stream().forEach(item -> total += item.getItem().getPrice());
-        //TODO - Design the logic to calculate the total
+        items.stream().forEach(item -> total += (item.getItem().getPrice() * item.getQuantity()));
         return total;
     }
 
