@@ -122,6 +122,9 @@ fabric.properties
 # See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
 
 .idea/
+**/.ipr
+**/.iml
+**/.iws
 
 ### Java ###
 # Compiled class file
@@ -156,6 +159,7 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
+.mvn
 .mvn/timing.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
@@ -166,3 +170,6 @@ buildNumber.properties
 
 
 .DS_Store
+*.ipr
+*.iml
+*.iws
