@@ -13,7 +13,7 @@ This version uses a number of Spring Cloud modules like
 The services need be executed in an order
 
 1. estore-config-service ([http://localhost:8888](http://localhost:8888))
-2. estore-discovery-service ((http://localhost:8761)[http://localhost:8761])
+2. estore-discovery-service ([http://localhost:8761](http://localhost:8761))
 3. estore-gateway-service ([http://localhost:8080](http://localhost:8080))
 4. estore-catalog-service (This service would be hosted on a random port)
 5. estore-user-services (This service would be hosted on a random port)
