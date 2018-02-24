@@ -1,10 +1,10 @@
 ## estore-gateway-service
 
-This service serves as an API gateway server for all the api's exposed by various services thereby enforcing any AuthN and AuthZ activities at a single point. It uses Spring Cloud Zuul to enable a gateway server. The Spring Cloud Zuul like all other modules in the Spring Cloud framework are built with Discovery in context. 
-
-The idea is that with simple config service redirection to the downstream services can be achieved. The only code it might require is for AuthN and AuthZ. 
+This service serves as an API gateway server for all the api's exposed by various downstream services thereby enforcing any AuthN and AuthZ activities at a single point. It uses Spring Cloud Zuul to enable a gateway server. The Spring Cloud Zuul like all other modules in the Spring Cloud framework are built with Discovery in context. 
 
 This service is hosted on http://localhost:8080
+
+The idea is that with simple config service redirection to the downstream services can be achieved. The only code it might require is for AuthN and AuthZ. 
 
 It relies on the route config defined the estore-gateway-service - 
 
