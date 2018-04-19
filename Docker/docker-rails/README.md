@@ -1,24 +1,13 @@
-# README
+# docker-rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails app configured to use postgresql as its database. 
 
-Things you may want to cover:
+To bring up the app simply run `docker-compose up`. 
 
-* Ruby version
+You can browse the app on `http://localhost:3000`
 
-* System dependencies
+To bring the app down run `docker-compose down`.
 
-* Configuration
+This is still WIP, I shall update the app to an estore like in my earlier trainings on microservices. 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Then I shall transform it to a more SOA model of operation from the current monolithic format and make use of Docker and Docker-Compose.
