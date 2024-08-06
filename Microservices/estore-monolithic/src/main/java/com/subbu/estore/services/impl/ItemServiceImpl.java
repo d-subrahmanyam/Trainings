@@ -25,7 +25,7 @@ public class ItemServiceImpl implements ItemService{
     }
 
     public void addItems(List<Item> items) {
-        itemRepo.save(items);
+        itemRepo.saveAll(items);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class ItemServiceImpl implements ItemService{
 
     @Override
     public void remove(long id) {
-        itemRepo.delete(id);
+        itemRepo.deleteById(id);
     }
 
     @Override
