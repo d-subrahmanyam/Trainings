@@ -8,6 +8,8 @@ import org.hibernate.id.GUIDGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -32,6 +34,8 @@ public class Order implements Serializable {
     private double amount;
 
     private String guid;
+
+    private Timestamp orderDate;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<LineItem> lineItems;
@@ -98,6 +102,14 @@ public class Order implements Serializable {
 
     public String getGuid() {
         return this.guid;
+    }
+
+    public Timestamp getOrderDate() {
+        return this.orderDate;
+    }
+
+    public void setOrderDate(Timestamp orderDate) {
+        this.orderDate = orderDate;
     }
 
     @Override

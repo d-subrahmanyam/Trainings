@@ -14,6 +14,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.List;
 
 /**
@@ -60,6 +63,7 @@ public class CartController {
         order.setUser(shoppingCart.getUser());
         order.setLineItems(shoppingCart.getItems());
         order.calculateTotal();
+        order.setOrderDate(Timestamp.from(Instant.now()));
         String guid = orderService.add(order);
         model.put("orderConfirmationId", guid);
         model.put("shoppingCart", shoppingCart);

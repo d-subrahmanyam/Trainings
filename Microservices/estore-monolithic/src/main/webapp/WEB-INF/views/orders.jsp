@@ -79,6 +79,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Order Confirmation Number</th>
+                <th scope="col">Order Date</th>
             </tr>
             </thead>
             <tbody>
@@ -86,6 +87,7 @@
                     <tr>
                         <th scope="row">${loopCounter.index+1}</th>
                         <td><a href="/order?orderId=${order.guid}">${order.guid}</a></td>
+                        <td>${order.orderDate}</td>
                     </tr>
                 </c:forEach>
             </tbody>

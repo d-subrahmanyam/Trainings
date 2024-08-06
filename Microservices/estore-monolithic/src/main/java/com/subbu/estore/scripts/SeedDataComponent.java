@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -69,6 +72,7 @@ public class SeedDataComponent implements CommandLineRunner{
         Order order = new Order();
         order.setAmount(50.00);
         order.setTax(5);
+        order.setOrderDate(Timestamp.from(Instant.now()));
 
         LineItem lineItem1 = new LineItem();
         lineItem1.setItem(itemService.getByName("apple"));
